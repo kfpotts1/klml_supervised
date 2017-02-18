@@ -12,5 +12,5 @@ Many of the algorithms within the package were developed for course projects.
  - Build a functioning Python Package
 
 #### Notes:
- - Will need setup.py
- - imports needed in __init__.py in klml_supervised
+ - Will need `setup.py`
+ - imports needed in `__init__.py` in `klml_supervised`
