@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8e5692-20d9-4942-8eac-e78e9b7bfcc3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/klml_supervised/knn.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/klml_supervised/distance.py" afterPath="$PROJECT_DIR$/klml_supervised/distance.py" />
     </list>
     <ignored path="klml_supervised.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,17 +22,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="distance.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="distance.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/klml_supervised/distance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="615">
+              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="knn.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="knn.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/klml_supervised/knn.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -68,8 +67,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/klml_supervised/distance.py" />
         <option value="$PROJECT_DIR$/klml_supervised/knn.py" />
+        <option value="$PROJECT_DIR$/klml_supervised/distance.py" />
       </list>
     </option>
   </component>
@@ -343,18 +342,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/klml_supervised/distance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/klml_supervised/knn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/klml_supervised/distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
           <folding />
         </state>
       </provider>

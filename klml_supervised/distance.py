@@ -7,17 +7,17 @@ def innerproduct(x, z=None):
 
     Computes the inner-product matrix.
     syntax:
-        d=innerproduct(x,z)
-    Input:
-        x: nxd data matrix with n vectors (rows) of dimensionality d
-        z: mxd data matrix with m vectors (rows) of dimensionality d
+        d = innerproduct(x,z)
+    Args:
+        x (numpy.ndarray): nxd data matrix with n vectors (rows) of dimensionality d
+        z (numpy.ndarray): mxd data matrix with m vectors (rows) of dimensionality d
 
     Output:
-        g: Matrix g of size nxm
+        g (numpy.ndarray): Matrix g of size nxm
             g[i,j] is the inner-product between vectors x[i,:] and z[j,:]
 
     When called with only one input:
-        innerproduct(x)=innerproduct(x,x)
+        innerproduct(x) = innerproduct(x,x)
     """
     if z is None:  # case when there is only one input (x)
         g = np.dot(x, x.transpose())
@@ -31,21 +31,21 @@ def innerproduct(x, z=None):
 
 def l2distance(x, z=None):
     """
-    function d=l2distance(x,z)
+    function d = l2distance(x,z)
 
     Computes the Euclidean distance matrix.
     syntax:
         d=l2distance(x,z)
-    Input:
-        x: nxd data matrix with n vectors (rows) of dimensionality d
-        z: mxd data matrix with m vectors (rows) of dimensionality d
+    Args:
+        x (numpy.dnarray): nxd data matrix with n vectors (rows) of dimensionality d
+        z (numpy.ndarray): mxd data matrix with m vectors (rows) of dimensionality d
 
-    Output:
-        d: Matrix d of size nxm
+    Returns:
+        d (numpy.ndarray): Matrix d of size nxm
             d(i,j) is the Euclidean distance of x(i,:) and z(j,:)
 
     When called with only one input:
-        l2distance(x)=l2distance(x,x)
+        l2distance(x) = l2distance(x,x)
     """
 
     if z is None:
