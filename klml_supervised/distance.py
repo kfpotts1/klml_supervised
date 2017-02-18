@@ -57,5 +57,5 @@ def l2distance(x, z=None):
         d_2 = s -2*g + r
         if x is z:
             np.fill_diagonal(d_2, 0.0)
-        d_2 = np.sqrt(d_2)
-        return d_2
+        d = np.sqrt(d_2)
+        return d
