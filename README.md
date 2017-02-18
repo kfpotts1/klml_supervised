@@ -10,3 +10,6 @@ Many of the algorithms within the package were developed for course projects.
  - Learn how and when to use each of the algorithms
  - Learn the underlying assumptions of each of the models
  - Build a functioning Python Package
+
+#### Notes:
+ - Will need setup.py
