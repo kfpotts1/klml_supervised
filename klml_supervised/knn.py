@@ -5,6 +5,7 @@ import numpy as np
 from scipy import stats
 from sklearn.model_selection import train_test_split
 from klml_supervised.analyze import *
+from klml_supervised.stats import mode
 
 
 def get_knn(x_train, x_test, k, dist_type='l2'):
@@ -95,7 +96,7 @@ def knn_classify(x_train, y_train, x_test, k='best', method='mode'):
             labels = np.zeros(indices_matrix.shape)
             for i in range(len(indices_matrix.T)):
                 labels[:, i] = y_train[(indices_matrix.T[i])].T
-            predictions = stats.mode(labels)[0][0]  # simple mode calc,
+            predictions = mode(labels)[0]  # simple mode calc,
             # if tie, takes least (maybe consider different k val in this case)
         else:
             raise ValueError('Invalid input for method.')

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8e5692-20d9-4942-8eac-e78e9b7bfcc3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/klml_supervised/stats.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/klml_supervised/knn.py" afterPath="$PROJECT_DIR$/klml_supervised/knn.py" />
     </list>
     <ignored path="klml_supervised.iws" />
@@ -37,23 +39,29 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="knn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/klml_supervised/knn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="813">
+              <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
               <folding>
-                <marker date="1487463067000" expanded="true" signature="62:1601" ph="..." />
-                <marker date="1487463067000" expanded="true" signature="67:694" ph="&quot;&quot;&quot;Analyzes the accuracy of a prediction against the known truths...&quot;&quot;&quot;" />
-                <marker date="1487463067000" expanded="true" signature="1146:1251" ph="..." />
+                <element signature="e#24#62#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="knn.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/klml_supervised/knn.py">
+      <file leaf-file-name="stats.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/klml_supervised/stats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-              <folding>
-                <element signature="e#24#62#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="570">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,6 +93,7 @@
       <list>
         <option value="$PROJECT_DIR$/klml_supervised/distance.py" />
         <option value="$PROJECT_DIR$/klml_supervised/analyze.py" />
+        <option value="$PROJECT_DIR$/klml_supervised/stats.py" />
         <option value="$PROJECT_DIR$/klml_supervised/knn.py" />
       </list>
     </option>
@@ -340,21 +349,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <marker date="1487463067000" expanded="true" signature="62:1601" ph="..." />
-            <marker date="1487463067000" expanded="true" signature="67:694" ph="&quot;&quot;&quot;Analyzes the accuracy of a prediction against the known truths...&quot;&quot;&quot;" />
-            <marker date="1487463067000" expanded="true" signature="1146:1251" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/klml_supervised/knn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+        <state relative-caret-position="813">
+          <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
           <folding>
             <element signature="e#24#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/klml_supervised/stats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
