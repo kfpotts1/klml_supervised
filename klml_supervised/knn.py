@@ -85,9 +85,9 @@ def knn_classify(x_train, y_train, x_test, k='best', method='mode'):
                 labels = y_train[(indices_matrix.T[i])].T
                 scores = np.zeros(class_un.shape[0])
                 for j in range(class_un.shape[0]):
-                    idxs = np.argwhere(labels == class_un[j]).T[0]
+                    idxs = np.argwhere(labels == class_un[j])[:, 1]
                     for idx in idxs:
-                        scores[j] += (1 / dist_matrix.T[i, idx[1]])
+                        scores[j] += (1 / dist_matrix.T[i, idx]**2)
                 predictions[i] = class_un[np.argmax(scores)]
         elif method == 'mode':
             labels = np.zeros(indices_matrix.shape)
