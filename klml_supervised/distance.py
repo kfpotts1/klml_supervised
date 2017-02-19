@@ -3,9 +3,8 @@ import numpy as np
 
 def innerproduct(x, z=None):
     """
-    function innerproduct(x,z)
-
     Computes the inner-product matrix.
+
     syntax:
         d = innerproduct(x,z)
     Args:
@@ -54,7 +53,7 @@ def l2distance(x, z=None):
         s = (x*x).sum(axis=1).reshape(-1, 1)
         r = (z*z).sum(axis=1)
         g = innerproduct(x, z)
-        d_2 = s -2*g + r
+        d_2 = s - 2*g + r
         if x is z:
             np.fill_diagonal(d_2, 0.0)
         d = np.sqrt(d_2)

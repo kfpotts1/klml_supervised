@@ -1,12 +1,11 @@
 #  K-Nearest Neighbors
 
 from klml_supervised.distance import *
+import numpy as np
 
 
 def get_knn(x_train, x_test, k, dist_type='l2'):
     """
-    function [indices,dists] = get_knn(x_train,x_test,k);
-
     Finds the k nearest neighbors of x_test in x_train.
 
     Args:
