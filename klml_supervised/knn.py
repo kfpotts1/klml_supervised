@@ -3,6 +3,8 @@
 from klml_supervised.distance import *
 import numpy as np
 from scipy import stats
+from sklearn.model_selection import train_test_split
+from klml_supervised.analyze import *
 
 
 def get_knn(x_train, x_test, k, dist_type='l2'):
@@ -35,7 +37,7 @@ def get_knn(x_train, x_test, k, dist_type='l2'):
     return index_matrix, min_matrix
 
 
-def knn_classify(x_train, y_train, x_test, k, method='mode'):
+def knn_classify(x_train, y_train, x_test, k='best', method='mode'):
     """
     k-nn classifier
 
@@ -48,7 +50,10 @@ def knn_classify(x_train, y_train, x_test, k, method='mode'):
         x_train (numpy.ndarray): nxd input matrix with n row-vectors of dimensionality d
         y_train (numpy.array): nx1 labels for x_train points
         x_test (numpy.ndarray): mxd input matrix with m row-vectors of dimensionality d
-        k (int): number of nearest neighbors to be found
+        k (int, str):
+            int: number of nearest neighbors to be found
+            str: 'best' by default, automatically selects k
+
         method (str): method for selecting label
             'mode':  assigns an equal weighted vote for each nearest neighbor (most frequent neighbor, mode)
             'weighted': assigns a weighted vote for each nearest neighbor, larger votes for nearness
@@ -57,26 +62,41 @@ def knn_classify(x_train, y_train, x_test, k, method='mode'):
     Returns:
         predictions (numpy.array): predicted labels, ie predictions(i) is the predicted label of x_test(i,:)
     """
-    indices_matrix, dist_matrx = get_knn(x_train, x_test, k)
 
-    if method == 'weighted':
-        predictions = np.zeros(indices_matrix.shape[1])
-        for i in range(len(indices_matrix.T)):
-            class_un = np.unique(y_train[(indices_matrix.T[i])].T)
-            labels = y_train[(indices_matrix.T[i])].T
-            scores = np.zeros(class_un.shape[0])
-            for j in range(class_un.shape[0]):
-                idxs = np.argwhere(labels == class_un[j]).T[0]
-                for idx in idxs:
-                    scores[j] += (1 / dist_matrx.T[i, idx[1]])
-            predictions[i] = class_un[np.argmax(scores)]
-    elif method == 'mode':
-        labels = np.zeros(indices_matrix.shape)
-        for i in range(len(indices_matrix.T)):
-            labels[:, i] = y_train[(indices_matrix.T[i])].T
-        predictions = stats.mode(labels)[0][0]  # simple mode calc,
-        # if tie, takes least (maybe consider different k val in this case)
+    if k == 'best':
+        # Split Test data into train and test
+        X_train, X_test, Y_train, y_test = train_test_split(x_train, y_train, test_size=0.66, random_state=42)
+
+        # we can argmax on k evaluated by our loss percentage
+        best_k = (0, 0)
+        for k_curr in range(1, 50):
+            predictions = knn_classify(X_train, Y_train, X_test, k=k_curr, method=method)
+            result = analyze("acc", y_test, predictions)
+            if result > best_k[1]:
+                best_k = (k_curr, result)
+        predictions = knn_classify(x_train, y_train, x_test, k=best_k[0], method=method)
     else:
-        raise ValueError('Invalid input for method.')
+        indices_matrix, dist_matrix = get_knn(x_train, x_test, k)
+
+        if method == 'weighted':
+            predictions = np.zeros(indices_matrix.shape[1])
+            for i in range(len(indices_matrix.T)):
+                class_un = np.unique(y_train[(indices_matrix.T[i])].T)
+                labels = y_train[(indices_matrix.T[i])].T
+                scores = np.zeros(class_un.shape[0])
+                for j in range(class_un.shape[0]):
+                    idxs = np.argwhere(labels == class_un[j]).T[0]
+                    for idx in idxs:
+                        scores[j] += (1 / dist_matrix.T[i, idx[1]])
+                predictions[i] = class_un[np.argmax(scores)]
+        elif method == 'mode':
+            labels = np.zeros(indices_matrix.shape)
+            for i in range(len(indices_matrix.T)):
+                labels[:, i] = y_train[(indices_matrix.T[i])].T
+            predictions = stats.mode(labels)[0][0]  # simple mode calc,
+            # if tie, takes least (maybe consider different k val in this case)
+        else:
+            raise ValueError('Invalid input for method.')
 
     return predictions
+
