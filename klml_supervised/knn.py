@@ -57,6 +57,8 @@ def knn_classify(x_train, y_train, x_test, k='best', method='mode'):
         method (str): method for selecting label
             'mode':  assigns an equal weighted vote for each nearest neighbor (most frequent neighbor, mode)
             'weighted': assigns a weighted vote for each nearest neighbor, larger votes for nearness
+                - weighting scheme loosely based off
+                [this site](http://www.data-machine.com/nmtutorial/distanceweightedknnalgorithm.htm)
 
 
     Returns:
