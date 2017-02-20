@@ -2,8 +2,7 @@
 
 from klml_supervised.distance import *
 import numpy as np
-from scipy import stats
-from sklearn.model_selection import train_test_split
+from klml_supervised.train_test_split import uniform_split
 from klml_supervised.analyze import *
 from klml_supervised.stats import mode
 
@@ -68,7 +67,7 @@ def knn_classify(x_train, y_train, x_test, k='best', method='mode'):
 
     if k == 'best':
         # Split Test data into train and test
-        X_train, X_test, Y_train, y_test = train_test_split(x_train, y_train, test_size=0.66, random_state=42)
+        X_train, X_test, Y_train, y_test = uniform_split(x_train, y_train)
 
         # we can argmax on k evaluated by our loss percentage
         best_k = (0, 0)
