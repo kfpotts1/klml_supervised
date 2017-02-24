@@ -90,7 +90,7 @@ def linear_classification(x, w, b=0):
             bias, also known as hyperplane constant wx - b = 0.
 
     Returns:
-        preds: (array_like)
+        predictions: (array_like)
             predicted label (1xn)
     """
 
