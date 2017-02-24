@@ -87,17 +87,17 @@ def linear_classification(x, w, b=0):
         w: (array_like)
             weight vector (dx1), defines a hyperplane which linearly separates test points
         b: (int, float)
-            bias, also known as hyperplane intercept.
+            bias, also known as hyperplane constant wx - b = 0.
 
     Returns:
         preds: (array_like)
             predicted label (1xn)
     """
-    # TODO: address bias b
+
     w = w.reshape(-1)
     dot = np.dot(x, w)
 
     dot = np.asanyarray(dot)
-    dot[dot > 0] = 1
-    dot[dot <= 0] = -1
+    dot[dot + b > 0] = 1
+    dot[dot + b <= 0] = -1
     return dot
