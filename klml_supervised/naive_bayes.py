@@ -160,5 +160,7 @@ def linear_classification(x, w, b=0):
     """
 
     predictions = np.dot(x, w)
-    return np.asarray([1 if prediction + b > 0 else -1 for prediction in predictions])
+    predictions[predictions + b > 0] = 1
+    predictions[predictions + b <= 0] = -1
+    return predictions
 

@@ -1,7 +1,33 @@
 import numpy as np
 
 
-def gen_hash_features(name, B, FIX, method='basic'):
+def gen_hash_features(name, B=256, FIX=4, method='basic'):
+    """
+    Generates a vector of features given a person's name.
+
+    Extracts and hashes features for a given name.
+    Focuses on the beginning and endings of the words (prefix and suffix).
+
+    Syntax:
+        features[i] = gen_hash_features(names[i])
+        features = gen_hash_features('Muhammad')
+
+    Args:
+        name: (string)
+            intended to be a person's name or similar style word
+        B: (int)
+            number of unique features to be used - hyperparameter
+        FIX: (int)
+            length of prefixes and suffixes to be used - hyperparameter
+        method: (string)
+            'basic' for a simple prefix/suffix hash
+            'other' for added features: vowel locations, letter distances, modified weights
+
+    Returns:
+        features: (array_like)
+            a 1xB array of features for the given name
+    """
+
     features = np.zeros(B)
     if method == 'basic':
         for i in range(FIX):
@@ -28,6 +54,27 @@ def gen_hash_features(name, B, FIX, method='basic'):
 
 
 def names_to_features(names_list, B=256, FIX=4):
+    """
+        Generates a nxB matrix of features given a list of n names
+
+        Extracts and hashes features for each given name.
+
+        Syntax:
+            features = gen_hash_features(names)
+
+        Args:
+            names_list: (array_like)
+                intended to be a list of people's names or similar style words
+            B: (int)
+                number of unique features to be used - hyperparameter
+            FIX: (int)
+                length of prefixes and suffixes to be used - hyperparameter
+
+        Returns:
+            features: (array_like)
+                a nxB matrix of features for the n given names
+                where the ith row is the feature vector for the ith name
+        """
     n = len(names_list)
     x = np.zeros((n, B))
     for i in range(n):
